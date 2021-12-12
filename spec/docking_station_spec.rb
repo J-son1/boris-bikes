@@ -34,17 +34,5 @@ describe DockingStation do
       bike = Bike.new
       expect(subject.dock(bike)).to eq [bike]
     end
-  
-  end
-  
-  describe '#bikes' do
-    it { is_expected.to respond_to :bikes }
-    
-    it 'returns docked bikes' do
-      bikes = []
-      20.times { bikes << Bike.new }
-      bikes.each { |bike| subject.dock bike }
-      expect(subject.bikes).to eq bikes
-    end
   end
 end
