@@ -7,11 +7,12 @@ describe Bike do
     it { is_expected.to respond_to :working? }
   end
 
-  describe '#broken' do
-    it { is_expected.to respond_to :broken }
+  describe '#report_broken' do
+    it { is_expected.to respond_to :report_broken }
 
-    it 'is not working' do
-      expect { bike.broken }.to change { bike.working? }.from(true).to(false)
+    it 'can be reported broken' do
+      bike.report_broken
+      expect(bike).to be_broken
     end
   end
 end
